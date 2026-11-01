@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hunger Place | Imamganj - Biryani & Handi Food Ordering</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-oswald { font-family: 'Oswald', sans-serif; letter-spacing: 0.5px; }
+    
+    .gold-gradient-bg {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    }
+    .gold-foil-text {
+      background: linear-gradient(135deg, #fef08a 0%, #fbbf24 45%, #d97706 80%, #fef08a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .luxury-card {
+      background: linear-gradient(180deg, rgba(26, 26, 32, 0.95) 0%, rgba(15, 15, 19, 0.95) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+    }
+    .luxury-card:hover {
+      border-color: rgba(245, 158, 11, 0.55);
+      box-shadow: 0 14px 35px -10px rgba(245, 158, 11, 0.18);
+    }
+    .glow-gold {
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+    }
+    .glow-green {
+      box-shadow: 0 0 22px rgba(16, 185, 129, 0.45);
+    }
+    .scrollbar-none::-webkit-scrollbar { display: none; }
+    .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    @keyframes pulse-subtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.025); }
+    }
+    .pulse-subtle { animation: pulse-subtle 3s infinite ease-in-out; }
+  </style>
+</head>
+<body class="bg-[#09090c] text-slate-100 min-h-screen selection:bg-amber-500 selection:text-black pb-36">
+
+  <!-- ================= TOP DEVELOPER BRANDING BAR (ASHISH SHARMA) ================= -->
+  <aside aria-label="Developer Notice" class="bg-gradient-to-r from-amber-700 via-amber-600 to-emerald-700 text-white text-xs py-2 px-3 sm:px-4 shadow-xl sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center space-x-2 truncate">
+        <span class="bg-black/70 text-amber-300 font-extrabold px-2 py-0.5 rounded text-[10px] tracking-wider uppercase border border-amber-400/40">OFFICIAL DEMO</span>
+        <span class="truncate font-medium text-[11px] sm:text-xs text-white">Specially Crafted for <b>THE HUNGER PLACE (Imamganj)</b></span>
+      </div>
+      <div class="flex items-center space-x-2 flex-shrink-0">
+        <span class="hidden md:inline text-[11px] text-amber-100">Live Website Banwane Ke Liye: <b>Ashish Sharma</b></span>
+        <a href="https://wa.me/918292794750?text=Namaste%20Ashish%20ji,%20The%20Hunger%20Place%20ka%20demo%20dekha.%20Website%20kaise%20live%20hogi%20batayein." target="_blank" class="bg-slate-950 hover:bg-black text-amber-400 font-bold px-3 py-1 rounded-full text-[11px] flex items-center gap-1.5 shadow-md border border-amber-400/40 transition">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> 8292794750
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= RESTAURANT BRAND HEADER ================= -->
+  <header class="bg-[#101015]/95 border-b border-amber-500/20 backdrop-blur-md sticky top-[33px] sm:top-[35px] z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-amber-600 to-yellow-500 flex items-center justify-center text-slate-950 text-xl font-black shadow-lg shadow-amber-500/20">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h1 class="font-cinzel text-base sm:text-xl font-black tracking-wider text-white">THE HUNGER PLACE</h1>
+            <span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 text-[9px] px-1.5 py-0.2 rounded font-semibold uppercase">Verified</span>
+          </div>
+          <p class="text-[11px] text-amber-300 font-medium tracking-wide flex items-center gap-1">
+            <i class="fa-solid fa-location-dot text-amber-500 text-[10px]"></i> Dumariya Road, Near Magadh Hospital, Imamganj
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="tel:8986432120" class="gold-gradient-bg hover:brightness-110 text-slate-950 text-xs font-bold px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 shadow-md transition">
+          <i class="fa-solid fa-phone"></i>
+          <span class="hidden sm:inline">Call Shop:</span> 8986432120
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO & TRUST HIGHLIGHTS ================= -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#181410] via-[#100f13] to-[#09090c] border-b border-amber-500/20 px-4 pt-8 pb-10">
+    <!-- Decorative background glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-44 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 border border-amber-500/30 text-amber-300 mb-4 shadow-sm">
+        <i class="fa-solid fa-motorcycle text-amber-400"></i> Fast Parcel Delivery Available Within 30 Minutes
+      </div>
+      
+      <h2 class="font-oswald text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-wide leading-tight">
+        SPECIALISED IN BIRYANI & <br><span class="gold-foil-text">SLOW-COOKED CLAY HANDI</span>
+      </h2>
+      
+      <p class="text-amber-100/80 text-xs sm:text-sm mt-3 max-w-xl mx-auto italic font-medium">
+        "Prepared Fresh Upon Your Order &bull; Delicious Food, Happy Mood"
+      </p>
+
+      <!-- 3 Key Badges -->
+      <div class="grid grid-cols-3 gap-2.5 sm:gap-4 max-w-xl mx-auto mt-7 text-center">
+        <div class="luxury-card p-3 rounded-2xl">
+          <div class="text-amber-400 font-extrabold text-sm sm:text-base flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-stopwatch text-xs"></i> 30 Min
+          </div>
+          <div class="text-[10px] text-slate-400 mt-0.5">Quick Parcel Dispatch</div>
+        </div>
+        <div class="luxury-card p-3 rounded-2xl">
+          <div class="text-emerald-400 font-extrabold text-sm sm:text-base flex items-center justify-center gap-1.5">
+            <i class="fa-brands fa-whatsapp text-xs"></i> Direct 0%
+          </div>
+          <div class="text-[10px] text-slate-400 mt-0.5">No Swiggy/Zomato Cut</div>
+        </div>
+        <div class="luxury-card p-3 rounded-2xl">
+          <div class="text-yellow-400 font-extrabold text-sm sm:text-base flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-fire text-xs"></i> 100% Fresh
+          </div>
+          <div class="text-[10px] text-slate-400 mt-0.5">Cooked After Order</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STICKY SEARCH & CATEGORY FILTER ================= -->
+  <section class="sticky top-[86px] sm:top-[90px] z-30 bg-[#0d0d12]/95 border-b border-amber-500/20 py-3 backdrop-blur-md shadow-xl">
+    <div class="max-w-6xl mx-auto px-4 space-y-3">
+      <!-- Search & Veg/Non-Veg Toggle -->
+      <div class="flex items-center gap-2">
+        <div class="relative flex-1">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-400/60 text-xs"></i>
+          <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search Paratha, Handi Mutton, Biryani, Chowmein, Chilli..." class="w-full pl-9 pr-8 py-2 bg-black/70 border border-amber-500/30 rounded-xl text-xs text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 transition">
+          <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="flex items-center bg-black/80 border border-amber-500/30 rounded-xl p-1 text-[11px] font-semibold flex-shrink-0">
+          <button id="dietAll" onclick="setDietFilter('all')" class="px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold transition">All</button>
+          <button id="dietVeg" onclick="setDietFilter('veg')" class="px-2.5 py-1 rounded-lg text-emerald-400 hover:bg-emerald-500/20 transition flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Veg
+          </button>
+          <button id="dietNonVeg" onclick="setDietFilter('nonveg')" class="px-2.5 py-1 rounded-lg text-rose-400 hover:bg-rose-500/20 transition flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span> Non-Veg
+          </button>
+        </div>
+      </div>
+
+      <!-- Categories Scroll -->
+      <div class="flex items-center gap-2 overflow-x-auto scrollbar-none text-xs pb-0.5">
+        <button onclick="setCategory('all', this)" class="cat-pill active-cat px-4 py-1.5 rounded-xl font-bold bg-amber-500 text-slate-950 whitespace-nowrap transition">
+          <i class="fa-solid fa-utensils mr-1"></i> All Menu (23)
+        </button>
+        <button onclick="setCategory('parathas', this)" class="cat-pill px-3.5 py-1.5 rounded-xl font-semibold bg-[#16161d] text-slate-300 border border-slate-800 hover:border-amber-500/40 whitespace-nowrap transition">
+          Special Parathas & Salads
+        </button>
+        <button onclick="setCategory('handi', this)" class="cat-pill px-3.5 py-1.5 rounded-xl font-semibold bg-[#16161d] text-slate-300 border border-slate-800 hover:border-amber-500/40 whitespace-nowrap transition">
+          Clay Handi Specials
+        </button>
+        <button onclick="setCategory('biryani', this)" class="cat-pill px-3.5 py-1.5 rounded-xl font-semibold bg-[#16161d] text-slate-300 border border-slate-800 hover:border-amber-500/40 whitespace-nowrap transition">
+          Dum Biryani
+        </button>
+        <button onclick="setCategory('fastfood', this)" class="cat-pill px-3.5 py-1.5 rounded-xl font-semibold bg-[#16161d] text-slate-300 border border-slate-800 hover:border-amber-500/40 whitespace-nowrap transition">
+          Rolls, Chowmein & Chilli
+        </button>
+        <button onclick="setCategory('curries', this)" class="cat-pill px-3.5 py-1.5 rounded-xl font-semibold bg-[#16161d] text-slate-300 border border-slate-800 hover:border-amber-500/40 whitespace-nowrap transition">
+          Gravy Curries & Eggs
+        </button>
+        <button onclick="setCategory('breads', this)" class="cat-pill px-3.5 py-1.5 rounded-xl font-semibold bg-[#16161d] text-slate-300 border border-slate-800 hover:border-amber-500/40 whitespace-nowrap transition">
+          Breads & Soups
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIVE FOOD CATALOG ================= -->
+  <main class="max-w-6xl mx-auto px-4 mt-6">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
+          <i class="fa-solid fa-fire text-amber-500"></i>
+          <span id="categoryHeading">Featured Dishes</span>
+        </h3>
+        <p class="text-[11px] text-slate-400">Directly from the original menu card</p>
+      </div>
+      <span id="itemsFoundCount" class="text-xs text-amber-400 font-bold bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20">
+        23 Dishes
+      </span>
+    </div>
+
+    <!-- Empty State -->
+    <div id="noMatchBox" class="hidden text-center py-16 luxury-card rounded-2xl p-6">
+      <div class="w-14 h-14 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-3">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <h4 class="text-base font-bold text-white">Koi Dish Nahi Mili</h4>
+      <p class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
+        Kripya spelling check karein ya category filter ko 'All' par set karein.
+      </p>
+      <button onclick="resetFilters()" class="mt-4 bg-amber-500 text-slate-950 font-bold px-4 py-1.5 rounded-xl text-xs hover:bg-amber-400 transition">
+        Reset All Filters
+      </button>
+    </div>
+
+    <!-- Menu Cards Grid -->
+    <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Items dynamically injected by JavaScript -->
+    </div>
+  </main>
+
+  <!-- ================= DEVELOPER CLOSING VALUE SECTION (ASHISH SHARMA) ================= -->
+  <section class="max-w-6xl mx-auto px-4 mt-16 space-y-6">
+    <div class="rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-[#1b150e] via-[#141217] to-[#0d1611] border border-amber-500/40 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-2xl relative z-10">
+        <span class="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-widest mb-3">
+          <i class="fa-solid fa-handshake"></i> FOR THE OWNER OF THE HUNGER PLACE
+        </span>
+        <h3 class="text-xl sm:text-2xl font-black text-white font-cinzel leading-snug">
+          Imamganj Ka Sabse Fast Digital Menu & Direct WhatsApp Ordering
+        </h3>
+        <p class="text-slate-300 text-xs sm:text-sm mt-2.5 leading-relaxed">
+          Zomato ya Swiggy par 25-30% hard-earned commission katwane ke bajaye, apni khud ki branded website par 100% direct parcel orders paayein. Dumariya Road ke customer seedha aapke WhatsApp (8986432120) par order bhejenge.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-5 text-xs text-slate-200">
+          <div class="flex items-center gap-2 bg-black/40 p-2 rounded-xl border border-white/5">
+            <i class="fa-solid fa-qrcode text-amber-400 text-sm"></i>
+            <span>Free QR Table Standee</span>
+          </div>
+          <div class="flex items-center gap-2 bg-black/40 p-2 rounded-xl border border-white/5">
+            <i class="fa-solid fa-clock-rotate-left text-amber-400 text-sm"></i>
+            <span>24-Hour Express Setup</span>
+          </div>
+          <div class="flex items-center gap-2 bg-black/40 p-2 rounded-xl border border-white/5">
+            <i class="fa-solid fa-ban text-emerald-400 text-sm"></i>
+            <span>0% Commission Ever</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="luxury-card p-5 rounded-2xl border-amber-500/40 flex flex-col items-center text-center w-full md:w-auto min-w-[260px] relative z-10">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-600 flex items-center justify-center text-slate-950 text-2xl font-black shadow-lg mb-2">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <span class="text-[10px] text-amber-300 font-bold uppercase tracking-widest">Web Developer & Consultant</span>
+        <h4 class="text-lg font-black text-white mt-0.5">Ashish Sharma</h4>
+        <p class="text-xs text-amber-400 font-bold mb-3">📞 +91 8292794750</p>
+
+        <a href="https://wa.me/918292794750?text=Namaste%20Ashish%20ji,%20The%20Hunger%20Place%20website%20demo%20dekha.%20Mujhe%20ye%20setup%20karna%20hai." target="_blank" class="w-full gold-gradient-bg hover:brightness-110 text-slate-950 font-black py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg transition">
+          <i class="fa-brands fa-whatsapp text-base"></i> Talk to Ashish Sharma
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FLOATING CHECKOUT PARCEL TRAY ================= -->
+  <aside aria-label="Order Cart Tray" id="cartTray" class="fixed bottom-0 left-0 right-0 bg-[#0e0e13]/95 border-t border-amber-500/40 p-3 sm:p-4 z-40 transition-transform duration-300 transform translate-y-full backdrop-blur-xl shadow-2xl">
+    <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-500 text-slate-950 flex items-center justify-center font-black text-xl shadow-lg relative flex-shrink-0">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cartCountBadge" class="absolute -top-1.5 -right-1.5 bg-red-600 text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#0e0e13]">0</span>
+        </div>
+        <div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold">Total Food Amount</div>
+          <div class="text-lg sm:text-xl font-black text-amber-400">₹<span id="cartTotalSum">0</span></div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="clearFullCart()" class="text-slate-400 hover:text-red-400 text-xs px-2 py-2 transition" title="Clear Tray">
+          <i class="fa-solid fa-trash-can text-sm"></i>
+        </button>
+        <button onclick="openCheckoutModal()" class="pulse-subtle bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm flex items-center gap-2 shadow-xl glow-green transition">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Confirm Parcel Order</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MODAL: ORDER DETAILS (ADDRESS & DELIVERY) ================= -->
+  <div id="checkoutModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="luxury-card w-full max-w-lg rounded-3xl p-6 border-amber-500/50 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-motorcycle"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-white text-base">Complete Your Parcel Details</h3>
+          <p class="text-[11px] text-slate-400">Order will go directly to The Hunger Place WhatsApp</p>
+        </div>
+      </div>
+
+      <!-- Items Summary in Modal -->
+      <div class="bg-black/50 border border-slate-800 rounded-2xl p-3 mb-4 space-y-2 max-h-36 overflow-y-auto scrollbar-none" id="modalItemsSummary">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Your Full Name *</label>
+          <input type="text" id="custName" placeholder="e.g. Rahul Kumar" class="w-full px-3 py-2 bg-black/70 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-amber-400">
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Order Type</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center gap-2 bg-black/60 border border-slate-700 p-2 rounded-xl cursor-pointer hover:border-amber-500">
+              <input type="radio" name="orderType" value="Home Delivery (30 Min)" checked class="accent-amber-500">
+              <span>Home Delivery (30 Min)</span>
+            </label>
+            <label class="flex items-center gap-2 bg-black/60 border border-slate-700 p-2 rounded-xl cursor-pointer hover:border-amber-500">
+              <input type="radio" name="orderType" value="Takeaway / Pickup" class="accent-amber-500">
+              <span>Self Pickup / Takeaway</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Delivery Address & Landmark in Imamganj *</label>
+          <textarea id="custAddress" rows="2" placeholder="e.g. Near Magadh Hospital / Dumariya Road / Gandhi Chowk..." class="w-full px-3 py-2 bg-black/70 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-amber-400"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Special Cooking Note (Optional)</label>
+          <input type="text" id="custNote" placeholder="e.g. Extra spicy, extra onion, less oil..." class="w-full px-3 py-2 bg-black/70 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-amber-400">
+        </div>
+      </div>
+
+      <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between">
+        <div>
+          <div class="text-[11px] text-slate-400">Payable at Delivery</div>
+          <div class="text-xl font-black text-amber-400">₹<span id="modalGrandTotal">0</span></div>
+        </div>
+        <button onclick="sendOrderViaWhatsApp()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 shadow-lg transition">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Send via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // COMPLETE VERIFIED DISHES FROM THE HUNGER PLACE MENU CARDS
+    const menuItems = [
+      // Special Parathas & Salads
+      {
+        id: "p1",
+        name: "Chicken Paratha",
+        category: "parathas",
+        diet: "nonveg",
+        badge: "Chef Specialised",
+        desc: "Crispy tawa paratha stuffed with freshly spiced roasted chicken filling.",
+        options: [{ label: "1 Pc", price: 99 }],
+        image: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "p2",
+        name: "Chilli Paratha",
+        category: "parathas",
+        diet: "veg",
+        badge: "Spicy Crispy",
+        desc: "Golden layered paratha tossed with spicy chopped green chillies & herbs.",
+        options: [{ label: "1 Pc", price: 99 }],
+        image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "p3",
+        name: "Special Raita",
+        category: "parathas",
+        diet: "veg",
+        badge: "Fresh Curd",
+        desc: "Thick whipped fresh dahi mixed with crunchy boondi, roasted jeera & black salt.",
+        options: [{ label: "Portion", price: 14 }],
+        image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "p4",
+        name: "Special Green Salad",
+        category: "parathas",
+        diet: "veg",
+        badge: "Fresh & Healthy",
+        desc: "Fresh cut cucumbers, onions, tomatoes, lemon wedges & green chillies.",
+        options: [{ label: "Full Plate", price: 29 }],
+        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop&q=80"
+      },
+
+      // Clay Handi Specials
+      {
+        id: "h1",
+        name: "Handi Biryani (Dum Cooked)",
+        category: "handi",
+        diet: "nonveg",
+        badge: "Clay Pot Special",
+        desc: "Authentic sealed earthen handi slow-cooked basmati dum biryani with marinated chicken.",
+        options: [{ label: "1 Kg Pot", price: 499 }],
+        image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "h2",
+        name: "Handi Chicken Gravy",
+        category: "handi",
+        diet: "nonveg",
+        badge: "Desi Ahuna Style",
+        desc: "Clay handi slow-simmered tender chicken curry in whole garlic & ground spices.",
+        options: [{ label: "1 Kg Pot", price: 499 }],
+        image: "https://images.unsplash.com/photo-1545247181-516773ca83f3?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "h3",
+        name: "Handi Mutton Special",
+        category: "handi",
+        diet: "nonveg",
+        badge: "Pure Champaran Ahuna",
+        desc: "Juicy mutton cuts slow cooked inside coal-fired earthen pot with whole spices & desi ghee.",
+        options: [{ label: "1 Kg Pot", price: 1199 }],
+        image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "h4",
+        name: "Handi Maggi",
+        category: "handi",
+        diet: "veg",
+        badge: "Signature Snack",
+        desc: "Unique clay-pot cooked cheese masala Maggi infused with buttery earthy aroma.",
+        options: [{ label: "200gm", price: 199 }],
+        image: "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=600&auto=format&fit=crop&q=80"
+      },
+
+      // Dum Biryani
+      {
+        id: "b1",
+        name: "Special Hydrabadi Biryani",
+        category: "biryani",
+        diet: "nonveg",
+        badge: "Top Seller",
+        desc: "Royal Hyderabadi aromatic long basmati rice with succulent chicken & boiled egg.",
+        options: [
+          { label: "Half", price: 79 },
+          { label: "Full", price: 119 }
+        ],
+        image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "b2",
+        name: "Muradabadi Dum Biryani",
+        category: "biryani",
+        diet: "nonveg",
+        badge: "Mild & Juicy",
+        desc: "Delicate white Muradabadi style chicken biryani served with spicy chutney.",
+        options: [
+          { label: "Half", price: 59 },
+          { label: "Full", price: 99 }
+        ],
+        image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "b3",
+        name: "Egg Dum Biryani",
+        category: "biryani",
+        diet: "nonveg",
+        badge: "Budget Dum Pot",
+        desc: "Flavored dum biryani rice paired with fried boiled eggs & rich spices.",
+        options: [
+          { label: "Half", price: 49 },
+          { label: "Full", price: 99 }
+        ],
+        image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&auto=format&fit=crop&q=80"
+      },
+
+      // Rolls, Chowmein & Chilli
+      {
+        id: "f1",
+        name: "Chicken Kathi Roll",
+        category: "fastfood",
+        diet: "nonveg",
+        badge: "Crispy Wrap",
+        desc: "Layered paratha stuffed with spicy roasted chicken, chopped onions & zesty sauces.",
+        options: [{ label: "1 Pc", price: 69 }],
+        image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "f2",
+        name: "Paneer Roll",
+        category: "fastfood",
+        diet: "veg",
+        badge: "Cottage Cheese",
+        desc: "Crispy wrap stuffed with soft spiced paneer cubes, capsicum & creamy dressing.",
+        options: [{ label: "1 Pc", price: 69 }],
+        image: "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "f3",
+        name: "Veg Chowmein",
+        category: "fastfood",
+        diet: "veg",
+        badge: "Wok Tossed",
+        desc: "Fresh noodles wok-tossed with crunchy cabbage, capsicum, carrots & dark soya.",
+        options: [
+          { label: "Half", price: 29 },
+          { label: "Full", price: 59 }
+        ],
+        image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "f4",
+        name: "Chicken Chowmein",
+        category: "fastfood",
+        diet: "nonveg",
+        badge: "Popular Indo-Chinese",
+        desc: "Wok-fried hakka noodles loaded with tender shredded chicken pieces & spring onions.",
+        options: [
+          { label: "Half", price: 49 },
+          { label: "Full", price: 79 }
+        ],
+        image: "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "f5",
+        name: "Paneer Chilli (Dry/Gravy)",
+        category: "fastfood",
+        diet: "veg",
+        badge: "Desi Chinese",
+        desc: "Crispy fried paneer cubes tossed in garlic, soya sauce, green chillies & bell peppers.",
+        options: [
+          { label: "Half", price: 99 },
+          { label: "Full", price: 179 }
+        ],
+        image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "f6",
+        name: "Chicken Chilli (Dry/Gravy)",
+        category: "fastfood",
+        diet: "nonveg",
+        badge: "Crispy Spicy",
+        desc: "Tender fried chicken bites tossed with garlic cloves, onions, capsicum & spicy sauce.",
+        options: [
+          { label: "Half", price: 79 },
+          { label: "Full", price: 159 }
+        ],
+        image: "https://images.unsplash.com/photo-1562967914-608f82629710?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "f7",
+        name: "Crispy Veg Burger",
+        category: "fastfood",
+        diet: "veg",
+        badge: "Snack Deal",
+        desc: "Golden potato patty tucked in toasted buns with onion, tomato & creamy mayo.",
+        options: [{ label: "1 Pc", price: 29 }],
+        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80"
+      },
+
+      // Gravy Curries & Eggs
+      {
+        id: "c1",
+        name: "Desi Chicken Curry",
+        category: "curries",
+        diet: "nonveg",
+        badge: "Home Style",
+        desc: "Tender chicken simmered in rich roasted onion, tomato, and authentic garam masala gravy.",
+        options: [{ label: "1 Kg Portion", price: 349 }],
+        image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "c2",
+        name: "Fresh Fish Curry",
+        category: "curries",
+        diet: "nonveg",
+        badge: "Mustard Special",
+        desc: "Freshwater fish cooked in traditional Bihari mustard-garlic gravy.",
+        options: [{ label: "1 Kg Portion", price: 399 }],
+        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "c3",
+        name: "Egg Curry Special",
+        category: "curries",
+        diet: "nonveg",
+        badge: "Family Pack",
+        desc: "6 boiled and shallow fried eggs slow cooked in aromatic thick gravy.",
+        options: [{ label: "6 Eggs", price: 199 }],
+        image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&auto=format&fit=crop&q=80"
+      },
+
+      // Breads & Soups
+      {
+        id: "br1",
+        name: "Lachha Paratha",
+        category: "breads",
+        diet: "veg",
+        badge: "Layered Butter",
+        desc: "Flaky multi-layered tawa paratha brushed with butter.",
+        options: [{ label: "1 Pc", price: 12 }],
+        image: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "br2",
+        name: "Tawa Roti",
+        category: "breads",
+        diet: "veg",
+        badge: "Desi Wheat",
+        desc: "Soft hot whole wheat tawa phulka roti.",
+        options: [{ label: "1 Pc", price: 8 }],
+        image: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        id: "br3",
+        name: "Amritsari Chole Bhature",
+        category: "breads",
+        diet: "veg",
+        badge: "Hot Combo",
+        desc: "2 fluffy deep-fried bhature served with zesty pindi chole and pickle.",
+        options: [{ label: "2 Pcs", price: 49 }],
+        image: "https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=600&auto=format&fit=crop&q=80"
+      }
+    ];
+
+    // State
+    let cart = {}; // key: "id__optionIndex", value: quantity
+    let currentCategory = 'all';
+    let currentDiet = 'all';
+    let currentSearch = '';
+    let selectedOptionMap = {}; // key: id, value: optionIndex
+
+    // Initialize default selected option for multi-option items
+    menuItems.forEach(item => {
+      selectedOptionMap[item.id] = 0;
+    });
+
+    function renderMenu() {
+      const grid = document.getElementById('menuGrid');
+      const noMatch = document.getElementById('noMatchBox');
+      const countLabel = document.getElementById('itemsFoundCount');
+
+      const filtered = menuItems.filter(item => {
+        const matchesCategory = currentCategory === 'all' || item.category === currentCategory;
+        const matchesDiet = currentDiet === 'all' || item.diet === currentDiet;
+        const query = currentSearch.toLowerCase().trim();
+        const matchesSearch = query === '' || 
+          item.name.toLowerCase().includes(query) || 
+          item.desc.toLowerCase().includes(query) ||
+          item.category.toLowerCase().includes(query);
+
+        return matchesCategory && matchesDiet && matchesSearch;
+      });
+
+      countLabel.innerText = `${filtered.length} Dishes`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noMatch.classList.remove('hidden');
+        return;
+      }
+
+      noMatch.classList.add('hidden');
+      grid.innerHTML = filtered.map(dish => {
+        const optIdx = selectedOptionMap[dish.id] || 0;
+        const currentOpt = dish.options[optIdx];
+        const cartKey = `${dish.id}__${optIdx}`;
+        const qty = cart[cartKey] || 0;
+
+        return `
+          <div class="luxury-card rounded-3xl overflow-hidden flex flex-col justify-between group transition-all duration-300">
+            <!-- Image & Tag Area -->
+            <div class="relative h-44 sm:h-48 overflow-hidden bg-black">
+              <img src="${dish.image}" alt="${dish.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80'">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#09090c] via-transparent to-transparent"></div>
+
+              <div class="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-lg text-[9px] font-black uppercase tracking-wider flex items-center gap-1 shadow-md ${dish.diet === 'veg' ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'}">
+                  <span class="w-1.5 h-1.5 rounded-full ${dish.diet === 'veg' ? 'bg-emerald-200' : 'bg-rose-200'}"></span>
+                  ${dish.diet === 'veg' ? 'VEG' : 'NON-VEG'}
+                </span>
+                ${dish.badge ? `<span class="bg-black/75 backdrop-blur-md text-amber-300 border border-amber-500/30 text-[10px] font-bold px-2 py-0.5 rounded-lg">${dish.badge}</span>` : ''}
+              </div>
+
+              <!-- Price Tag -->
+              <div class="absolute bottom-3 right-3 bg-amber-500 text-slate-950 font-black text-sm px-2.5 py-1 rounded-xl shadow-lg border border-amber-300">
+                ₹${currentOpt.price}
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-extrabold text-white text-base leading-snug group-hover:text-amber-400 transition-colors">${dish.name}</h4>
+                <p class="text-slate-400 text-xs mt-1.5 line-clamp-2 leading-relaxed">${dish.desc}</p>
+              </div>
+
+              <!-- Portions & Action Row -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80">
+                ${dish.options.length > 1 ? `
+                  <div class="flex items-center gap-1.5 mb-3 bg-black/60 p-1 rounded-xl border border-slate-800">
+                    ${dish.options.map((opt, i) => `
+                      <button onclick="setOption('${dish.id}', ${i})" class="flex-1 text-[11px] py-1 rounded-lg font-bold transition ${i === optIdx ? 'bg-amber-500 text-slate-950 shadow' : 'text-slate-400 hover:text-white'}">
+                        ${opt.label} - ₹${opt.price}
+                      </button>
+                    `).join('')}
+                  </div>
+                ` : ''}
+
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] text-amber-400 font-semibold flex items-center gap-1">
+                    <i class="fa-solid fa-bolt text-[10px]"></i> 30 Min Dispatch
+                  </span>
+
+                  ${qty > 0 ? `
+                    <div class="flex items-center bg-black border border-amber-500/60 rounded-xl overflow-hidden shadow">
+                      <button onclick="updateQty('${dish.id}', ${optIdx}, -1)" class="w-8 h-8 flex items-center justify-center bg-amber-500/20 hover:bg-amber-500/40 text-amber-400 font-black transition">-</button>
+                      <span class="w-8 text-center text-xs font-black text-white">${qty}</span>
+                      <button onclick="updateQty('${dish.id}', ${optIdx}, 1)" class="w-8 h-8 flex items-center justify-center bg-amber-500/20 hover:bg-amber-500/40 text-amber-400 font-black transition">+</button>
+                    </div>
+                  ` : `
+                    <button onclick="updateQty('${dish.id}', ${optIdx}, 1)" class="gold-gradient-bg hover:brightness-110 text-slate-950 font-black px-4 py-1.5 rounded-xl text-xs flex items-center gap-1.5 shadow-md transition">
+                      <i class="fa-solid fa-plus text-[10px]"></i> Add
+                    </button>
+                  `}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setOption(dishId, optIdx) {
+      selectedOptionMap[dishId] = optIdx;
+      renderMenu();
+    }
+
+    function updateQty(dishId, optIdx, delta) {
+      const key = `${dishId}__${optIdx}`;
+      if (!cart[key]) cart[key] = 0;
+      cart[key] += delta;
+      if (cart[key] <= 0) delete cart[key];
+      renderMenu();
+      syncCartTray();
+    }
+
+    function clearFullCart() {
+      cart = {};
+      renderMenu();
+      syncCartTray();
+    }
+
+    function syncCartTray() {
+      const tray = document.getElementById('cartTray');
+      const badge = document.getElementById('cartCountBadge');
+      const totalText = document.getElementById('cartTotalSum');
+
+      let count = 0;
+      let total = 0;
+
+      for (let key in cart) {
+        const [dishId, optIdx] = key.split('__');
+        const dish = menuItems.find(d => d.id === dishId);
+        const opt = dish.options[parseInt(optIdx)];
+        const qty = cart[key];
+        count += qty;
+        total += (opt.price * qty);
+      }
+
+      badge.innerText = count;
+      totalText.innerText = total;
+
+      if (count > 0) {
+        tray.classList.remove('translate-y-full');
+      } else {
+        tray.classList.add('translate-y-full');
+      }
+    }
+
+    // Category & Search controls
+    function setCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(el => {
+        el.classList.remove('active-cat', 'bg-amber-500', 'text-slate-950');
+        el.classList.add('bg-[#16161d]', 'text-slate-300', 'border-slate-800');
+      });
+      btn.classList.add('active-cat', 'bg-amber-500', 'text-slate-950');
+      btn.classList.remove('bg-[#16161d]', 'text-slate-300', 'border-slate-800');
+
+      const headingMap = {
+        'all': 'All Menu Highlights',
+        'parathas': 'Special Parathas & Salads',
+        'handi': 'Clay Handi Specials (Earthen Pots)',
+        'biryani': 'Dum Biryani Specialties',
+        'fastfood': 'Rolls, Chowmein & Chilli',
+        'curries': 'Gravy Curries & Eggs',
+        'breads': 'Roti, Paratha & Soups'
+      };
+      document.getElementById('categoryHeading').innerText = headingMap[cat] || 'Dishes';
+      renderMenu();
+    }
+
+    function setDietFilter(type) {
+      currentDiet = type;
+      const allBtn = document.getElementById('dietAll');
+      const vegBtn = document.getElementById('dietVeg');
+      const nonVegBtn = document.getElementById('dietNonVeg');
+
+      allBtn.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition";
+      vegBtn.className = "px-2.5 py-1 rounded-lg text-emerald-400 hover:bg-emerald-500/20 transition flex items-center gap-1";
+      nonVegBtn.className = "px-2.5 py-1 rounded-lg text-rose-400 hover:bg-rose-500/20 transition flex items-center gap-1";
+
+      if (type === 'all') {
+        allBtn.className = "px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold transition";
+      } else if (type === 'veg') {
+        vegBtn.className = "px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold transition flex items-center gap-1";
+      } else {
+        nonVegBtn.className = "px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold transition flex items-center gap-1";
+      }
+
+      renderMenu();
+    }
+
+    function handleSearch() {
+      const input = document.getElementById('searchInput');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      currentSearch = input.value;
+      if (currentSearch.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      renderMenu();
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      currentSearch = '';
+      renderMenu();
+    }
+
+    function resetFilters() {
+      currentDiet = 'all';
+      currentCategory = 'all';
+      currentSearch = '';
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      setDietFilter('all');
+      document.querySelectorAll('.cat-pill')[0].click();
+    }
+
+    // Modal & WhatsApp Checkout
+    function openCheckoutModal() {
+      const modal = document.getElementById('checkoutModal');
+      const summaryBox = document.getElementById('modalItemsSummary');
+      const totalSpan = document.getElementById('modalGrandTotal');
+
+      let html = '';
+      let grandTotal = 0;
+
+      for (let key in cart) {
+        const [dishId, optIdx] = key.split('__');
+        const dish = menuItems.find(d => d.id === dishId);
+        const opt = dish.options[parseInt(optIdx)];
+        const qty = cart[key];
+        const sub = opt.price * qty;
+        grandTotal += sub;
+
+        html += `
+          <div class="flex items-center justify-between text-xs text-slate-200">
+            <span>• ${dish.name} (${opt.label}) x ${qty}</span>
+            <span class="font-bold text-amber-400">₹${sub}</span>
+          </div>
+        `;
+      }
+
+      summaryBox.innerHTML = html;
+      totalSpan.innerText = grandTotal;
+      modal.classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function sendOrderViaWhatsApp() {
+      const name = document.getElementById('custName').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+      const orderTypeEl = document.querySelector('input[name="orderType"]:checked');
+      const orderType = orderTypeEl ? orderTypeEl.value : 'Parcel Delivery';
+      const note = document.getElementById('custNote').value.trim();
+
+      if (!name) {
+        alertBox("Kripya apna Naam likhein.");
+        return;
+      }
+      if (!address) {
+        alertBox("Kripya apna Delivery Address ya landmark likhein.");
+        return;
+      }
+
+      let grandTotal = 0;
+      let text = `*NEW ONLINE ORDER - THE HUNGER PLACE*%0A`;
+      text += `📍 *Location:* Dumariya Road, Near Magadh Hospital, Imamganj%0A`;
+      text += `--------------------------------%0A`;
+      text += `👤 *Customer Name:* ${encodeURIComponent(name)}%0A`;
+      text += `📦 *Order Type:* ${encodeURIComponent(orderType)}%0A`;
+      text += `🏠 *Address/Landmark:* ${encodeURIComponent(address)}%0A`;
+      if (note) {
+        text += `📝 *Note:* ${encodeURIComponent(note)}%0A`;
+      }
+      text += `--------------------------------%0A`;
+      text += `*ITEMS ORDERED:*%0A`;
+
+      for (let key in cart) {
+        const [dishId, optIdx] = key.split('__');
+        const dish = menuItems.find(d => d.id === dishId);
+        const opt = dish.options[parseInt(optIdx)];
+        const qty = cart[key];
+        const sub = opt.price * qty;
+        grandTotal += sub;
+        text += `• ${encodeURIComponent(dish.name)} (${encodeURIComponent(opt.label)}) x ${qty} = ₹${sub}%0A`;
+      }
+
+      text += `--------------------------------%0A`;
+      text += `*TOTAL BILL:* ₹${grandTotal}%0A`;
+      text += `🚀 *Delivery Promise:* Within 30 Minutes%0A`;
+      text += `%0AKripya order accept karein aur preparation time confirm karein.`;
+
+      // Official WhatsApp Number for The Hunger Place (8986432120)
+      window.open(`https://wa.me/918986432120?text=${text}`, '_blank');
+      closeCheckoutModal();
+    }
+
+    function alertBox(msg) {
+      const el = document.createElement('div');
+      el.className = "fixed top-12 left-1/2 -translate-x-1/2 bg-red-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-2xl z-50 flex items-center gap-2";
+      el.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${msg}`;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 2800);
+    }
+
+    // Initial render
+    renderMenu();
+  </script>
+</body>
+</html>
